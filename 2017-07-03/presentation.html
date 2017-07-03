@@ -972,7 +972,7 @@ body {
 </ul>
 </div><div class="step" data-x="20800"><h1 id="user-content-2-1&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;" class="deep-link">2-1.&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;</h1>
 <ul>
-<li>&#x7B80;&#x5355;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;
+<li>&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;
 <ul>
 <li>1.&#x83B7;&#x53D6;&#x6570;&#x636E;&#x5E93;&#x8868;&#x7684;&#x4FE1;&#x606F;&#xFF1A;<div class="highlight "><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>&lt;select&#xA0;id=&quot;queryTable&quot;&#xA0;resultType=&quot;map&quot;&gt;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;select&#xA0;table_name&#xA0;tableName,&#xA0;engine,&#xA0;table_comment&#xA0;tableComment,&#xA0;create_time&#xA0;createTime&#xA0;from&#xA0;information_schema.tables&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;where&#xA0;table_schema&#xA0;=&#xA0;(select&#xA0;database())&#xA0;and&#xA0;table_name&#xA0;=&#xA0;#{tableName}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&lt;/select&gt;&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&lt;select&#xA0;id=&quot;queryColumns&quot;&#xA0;resultType=&quot;map&quot;&gt;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;select&#xA0;column_name&#xA0;columnName,&#xA0;data_type&#xA0;dataType,&#xA0;column_comment&#xA0;columnComment,&#xA0;column_key&#xA0;columnKey,&#xA0;extra&#xA0;from&#xA0;information_schema.columns</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;where&#xA0;table_name&#xA0;=&#xA0;#{tableName}&#xA0;and&#xA0;table_schema&#xA0;=&#xA0;(select&#xA0;database())&#xA0;order&#xA0;by&#xA0;ordinal_position</span></span></div><div class="line"><span class="text plain null-grammar"><span>&lt;/select&gt;</span></span></div></pre></div>
 </li>
@@ -981,7 +981,7 @@ body {
 </ul>
 </div><div class="step" data-x="23400"><h1 id="user-content-2-1&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;" class="deep-link">2-1.&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;</h1>
 <ul>
-<li>&#x7B80;&#x5355;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;
+<li>&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;
 <ul>
 <li>2.&#x5B9A;&#x4E49;&#x7C7B;&#x4E0E;&#x524D;&#x7AEF;&#x6A21;&#x677F;,&#x4EE5;controller&#x7684;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x4E3A;&#x4F8B;<div class="highlight "><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>/**</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;*&#xA0;&#x4FEE;&#x6539;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;*/</span></span></div><div class="line"><span class="text plain null-grammar"><span>@RequestMapping(&quot;/update&quot;)</span></span></div><div class="line"><span class="text plain null-grammar"><span>@RequiresPermissions(&quot;${pathName}:update&quot;)</span></span></div><div class="line"><span class="text plain null-grammar"><span>public&#xA0;R&#xA0;update(@RequestBody&#xA0;${className}Entity&#xA0;${classname}){</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;${classname}Service.update(${classname});</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;return&#xA0;R.ok();</span></span></div><div class="line"><span class="text plain null-grammar"><span>}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>/**</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;*&#xA0;&#x5220;&#x9664;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;*/</span></span></div><div class="line"><span class="text plain null-grammar"><span>@RequestMapping(&quot;/delete&quot;)</span></span></div><div class="line"><span class="text plain null-grammar"><span>@RequiresPermissions(&quot;${pathName}:delete&quot;)</span></span></div><div class="line"><span class="text plain null-grammar"><span>public&#xA0;R&#xA0;delete(@RequestBody&#xA0;${pk.attrType}[]&#xA0;${pk.attrname}s){</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;${classname}Service.deleteBatch(${pk.attrname}s);</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;return&#xA0;R.ok();</span></span></div><div class="line"><span class="text plain null-grammar"><span>}</span></span></div></pre></div>
 </li>
@@ -990,7 +990,7 @@ body {
 </ul>
 </div><div class="step" data-x="26000"><h1 id="user-content-2-1&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;" class="deep-link">2-1.&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;</h1>
 <ul>
-<li>&#x7B80;&#x5355;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;
+<li>&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;
 <ul>
 <li>3.velocity&#x6A21;&#x677F;&#x6280;&#x672F;&#x751F;&#x6210;&#x4EE3;&#x7801;</li>
 </ul>
@@ -999,7 +999,7 @@ body {
 </ul>
 </div><div class="step" data-x="28600"><h1 id="user-content-2-1&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;" class="deep-link">2-1.&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;&#x5E94;&#x7528;</h1>
 <ul>
-<li>&#x7B80;&#x5355;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;
+<li>&#x534A;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x7A0B;
 <ul>
 <li>4.<a href="http://localhost:8088/">&#x5B9E;&#x9645;&#x6848;&#x4F8B;&#x6F14;&#x793A;</a></li>
 </ul>
