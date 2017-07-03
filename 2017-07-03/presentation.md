@@ -11,8 +11,8 @@
 markpress-opt-->
 # 权限控制及半自动化编程
 
-## 1.权限控制（shrio权限控制）
-> [shrio](http://shiro.apache.org/)不仅可以用在JavaSE环境，也可以用在JavaEE环境。Shiro可以帮助我们完成：认证、授权、加密、会话管理、与Web集成、缓存等。相比[Spring Security](http://projects.spring.io/spring-security/)更容易上手。
+## 1.权限控制（shiro权限控制）
+> [shiro](http://shiro.apache.org/)不仅可以用在JavaSE环境，也可以用在JavaEE环境。Shiro可以帮助我们完成：认证、授权、加密、会话管理、与Web集成、缓存等。相比[Spring Security](http://projects.spring.io/spring-security/)更容易上手。
 
 ## 2.半自动化编程
 > 半自动化编程在很多项目中将重复的工作交给计算机去完成，开发只专注于业务，可以将开发效率提高到40% ~ 60%。
@@ -27,7 +27,7 @@ markpress-opt-->
 - why：当系统登录用户存在等级区分时，常常需要权限控制。
 - how：所有的实体及关联关系都需要数据库表来维护，才能进行动态管理。
 
-# 1-1.shrio实际应用
+# 1-1.shiro实际应用
 
 - 简单的权限控制
   + 1.数据库的设计，三种实体，两种关系，共五张表。
@@ -39,7 +39,7 @@ markpress-opt-->
     role_menu : role_id、menu_id
     ```
 
-# 1-1.shrio实际应用
+# 1-1.shiro实际应用
 
 - 简单的权限控制
   + 2.前端使用方式，因vue为例：
@@ -67,7 +67,7 @@ markpress-opt-->
 
 
 
-# 1-1.shrio实际应用
+# 1-1.shiro实际应用
 
 - 简单的权限控制
   + 3.后台的权限校验：
@@ -88,7 +88,7 @@ markpress-opt-->
     }
     ```
 
-# 1-1.shrio实际应用
+# 1-1.shiro实际应用
 
 - 简单的权限控制
   + 4.[实际案例演示](http://localhost:8088/)
