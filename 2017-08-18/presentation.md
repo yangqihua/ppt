@@ -29,10 +29,9 @@ markpress-opt-->
  + ...
 
 - 统一使用 lombok 对代码进行简洁化处理
-- 推荐使用 mybatis & mybatis plus 进行数据持久层开发
-- 推荐使用 spring-data-jpa 进行数据持久层开发
-- 推荐使用 apache commons-lang 或 google guava 工具包提高开发效率
-- 推荐使用 log4j 或者 logback 进行日志记录
+- 统一使用 spring-data-jpa 进行数据持久层开发
+- 统一使用 apache commons-lang 或 google guava 工具包提高开发效率
+- 统一使用 logback 进行日志记录
 
 ## 4.项目开发规范
 - 每个项目必须有日志（开发环境日志和生产环境日志）
